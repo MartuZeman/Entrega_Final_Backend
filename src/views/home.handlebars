@@ -1,6 +1,14 @@
 <div class="dashboard">
     <h1 class="dashboard-title">Home</h1>
 
+    <!-- Formulario para ir a un carrito por código -->
+    <div class="cart-search">
+        <form id="cartForm">
+            <input type="text" id="cartIdInput" placeholder="Ingrese código del carrito" required>
+            <button type="submit">Ir al carrito</button>
+        </form>
+    </div>
+
     <div class="product-grid">
         {{#each products}}
         <div class="product-card">
@@ -9,15 +17,14 @@
             </div>
             <h2 class="product-title">{{this.title}}</h2>
             <h3 class="product-price">Precio: {{this.price}}</h3>
-
         </div>
         {{/each}}
     </div>
+
     <div class="pagination">
         {{#each links}}
             <a href={{this.link}}>{{this.text}}</a>
-
         {{/each}}
     </div>
-
 </div>
+<script src="/js/index.js"></script>

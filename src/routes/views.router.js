@@ -1,5 +1,6 @@
 import express, { text } from "express"
 import Products from "../models/product.model.js"
+import Cart from "../models/cart.models.js";
 
 const viewsRouter = express.Router();
 
@@ -42,5 +43,23 @@ try {
 }
     
 })
+
+viewsRouter.get("/cart/:cid", async(req,res)=>{
+    try {
+
+        const cid = req.params.cid;
+
+        const cart = await Cart.findById(cid).populate("products.product").lean();
+
+        if (!cart) return res.status(404).json({ status: "error", message: "Carrito no encontrado" });
+
+
+        res.render("cart", { cartProducts: cart.products })
+    } catch (error) {
+        res.status(500).json({status:"error", message: error.message})  
+    }
+})
+
+
 
 export default viewsRouter

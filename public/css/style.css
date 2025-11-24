@@ -79,3 +79,48 @@ body {
 .pagination a:hover {
     background: #eee;
 }
+
+.cart-search {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+#cartForm input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#cartForm button {
+    padding: 5px 12px;
+    margin-left: 5px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#cartForm button:hover {
+    background-color: #0056b3;
+}
+.back-home {
+    margin-bottom: 30px; /* separa el enlace de las cards */
+}
+
+.btn-back-home {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn-back-home:hover {
+    background-color: #0056b3;
+}
